@@ -7,6 +7,7 @@ import { sample_foods, sample_tags, sample_users } from "./data"
 import jwt from "jsonwebtoken"
 import foodRouter from './routers/food.router'
 import userRouter from './routers/user.router'
+import orderRouter from './routers/order.router'
 import { dbConnect } from './configs/database.config'
 
 dbConnect()
@@ -23,6 +24,7 @@ app.use(cors({
 
 app.get("/api/foods", foodRouter)
 app.get("/api/users", userRouter)
+app.get("/api/orders", orderRouter)
 
 
 const port = 5000
